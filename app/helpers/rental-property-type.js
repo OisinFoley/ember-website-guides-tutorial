@@ -14,4 +14,4 @@ export function rentalPropertyType([propertyType]) {
   return 'Standalone';
 }
 
-export default helper(rentalPropertyType);
+export default Ember.Helper.helper(rentalPropertyType);
