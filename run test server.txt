@@ -1,0 +1,2 @@
+ember test --server
+might be able to run ember t -s
