@@ -2,9 +2,9 @@ import Ember from 'ember';
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  model() {
-    
-    return this.get('store').findAll('rental');
+  // model() {
+  //
+  //   return this.get('store').findAll('rental');
 
     // return [{
     //   id: 'grand-old-mansion',
@@ -36,5 +36,5 @@ export default Route.extend({
     //   description: 'Convenience is at your doorstep with this charming downtown rental. Great restaurants and active night life are within a few feet.'
 
     // }];
-  }
+  // }
 });

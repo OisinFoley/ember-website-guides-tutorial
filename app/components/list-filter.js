@@ -6,7 +6,10 @@ export default Ember.Component.extend({
 
   init() {
     this._super(...arguments);
-    this.get('filter')('').then((results) => this.set('results', results));
+    //initialising list, empty value means render all values
+    this.get('filter')('').then((allResults) => {
+      this.set('results', allResults.results);
+    });
   },
 
   actions: {
@@ -14,6 +17,11 @@ export default Ember.Component.extend({
       let filterInputValue = this.get('value');
       let filterAction = this.get('filter');
       filterAction(filterInputValue).then((filterResults) => this.set('results', filterResults));
+      filterAction(filterInputValue).then((filterResults) => {
+        if (filterResults.query === this.get('value')) {
+          this.set('results', filterResults.results);
+        }
+      });
     }
   }
 
